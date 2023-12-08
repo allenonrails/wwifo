@@ -47,6 +47,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
@@ -510,6 +511,12 @@ a {
   font-size: 48px;
   text-transform: uppercase;
   text-align: center;
+}
+
+@media screen and (max-width: 678px) {
+  .title {
+    font-size: 32px;
+  }
 }
 
 .about-title {
@@ -1052,4 +1059,158 @@ filter: grayscale(0%) brightness(100%);
   .coverflow .content .back {
     padding: 0 20px;
   }
+}
+
+/* request */
+
+.request {
+  padding: 80px 0px;
+}
+
+.request-title {
+  margin-bottom: 100px;
+}
+
+.request-wrap {
+  display: flex;
+}
+
+.request-form, .request-images {
+  width: calc(100% / 12 * 6);
+}
+
+.container form{
+  padding: 30px 0 0 0;
+}
+.container form .form-row{
+  display: flex;
+  margin: 32px 0;
+}
+form .form-row .input-data{
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+}
+form .form-row .textarea{
+  height: 70px;
+}
+.input-data input,
+.textarea textarea{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 20px;
+  border-bottom: 2px solid rgba(0,0,0, 0.12);
+}
+.input-data input:focus ~ label, .textarea textarea:focus ~ label,
+.input-data input:valid ~ label, .textarea textarea:valid ~ label{
+  transform: translateY(-20px);
+  font-size: 24px;
+  color: #AC906A;
+}
+.textarea textarea{
+  resize: none;
+  padding-top: 10px;
+}
+.input-data label{
+  position: absolute;
+  pointer-events: none;
+  bottom: 10px;
+  font-size: 24px;
+  color: #D9D9D9;
+  transition: all 0.3s ease;
+}
+.textarea label{
+  width: 100%;
+  bottom: 40px;
+  background: #fff;
+}
+.input-data .underline{
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+.input-data .underline:before{
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #AE957A;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before,
+.textarea textarea:focus ~ .underline:before,
+.textarea textarea:valid ~ .underline:before{
+  transform: scale(1);
+}
+
+@media (max-width: 700px) {
+  .container .text{
+    font-size: 30px;
+  }
+  .container form{
+    padding: 10px 0 0 0;
+  }
+  .container form .form-row{
+    display: block;
+  }
+  form .form-row .input-data{
+    margin: 35px 0!important;
+  }
+  .submit-btn .input-data{
+    width: 40%!important;
+  }
+}
+
+.request-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.request-image:first-child {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.request-image img{
+  width: calc(100% / 12 * 6);
+}
+
+
+@media screen and (max-width: 768px) {
+  .request-wrap {
+    flex-wrap: wrap-reverse;
+  }
+
+  .request-form, .request-images {
+    width: 100%;
+  }
+  .form-btn {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  .request-images {
+    display: flex;
+    justify-content: center;
+  }
+  .request-image:first-child {
+    display: block;
+  }
+  .request-image {
+    display: block;
+    text-align: center;
+  }
+  .request-image img{
+    max-width: 500px;
+    width: 100%;
+  }
+  
 }
