@@ -665,6 +665,7 @@ span.about-subtitle {
 .who-content {
   color: #333;
   max-width: 600px;
+  font-family: 'Inter';
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
@@ -1501,3 +1502,190 @@ form .form-row .textarea{
     font-size: 18px;
   }
 }
+
+/* faq */
+
+.faq {
+  margin-top: 50px;
+  padding-bottom: 100px;
+  font-family: 'Inter';
+}
+
+#faq {
+  margin-top: 50px;
+  padding: 0 15px;
+  text-align: center;
+}
+
+section.faq {
+  padding-top: 2em;
+  padding-bottom: 3em;
+}
+
+#faq ul {
+  text-align: left;
+}
+.transition, p, ul li i:before, ul li i:after {
+  transition: all 0.3s;
+}
+
+#faq .no-select, #faq h3 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+#faq h3 {
+  color: #333;
+  font-size: 24px;
+  line-height: 34px;
+  text-align: left;
+  padding: 15px 15px 0;
+  text-transform: none;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: block;
+  margin: 0;
+  cursor: pointer;
+  transition: .2s;
+  display: inline-block;
+}
+
+#faq p {
+  color: #333;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.45;
+  position: relative;
+  overflow: hidden;
+  max-height: 500px;
+  will-change: max-height;
+  contain: layout;
+  display: inline-block;
+  opacity: 1;
+  transform: translate(0, 0);
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 0 50px 0 15px;
+  transition: .3s opacity, .6s max-height;
+  hyphens: auto;
+  z-index: 2;
+}
+
+#faq ul {
+  list-style: none;
+  perspective: 900;
+  padding: 0;
+  margin: 0;
+}
+#faq ul li {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border-top: 2px solid #333;
+  border-radius: 2px;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+#faq ul li::before {
+  content: attr(data-num);
+  color: #A98F70;
+  font-family: 'Inter Bold';
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  margin-left: 10px;
+  letter-spacing: 0.25px; 
+  display: inline-block;
+}
+#faq ul li + li {
+  margin-top: 15px;
+}
+#faq ul li:last-of-type {
+  padding-bottom: 0;
+}
+#faq ul li i {
+  position: absolute;
+  transform: translate(-6px, 0);
+  margin-top: 28px;
+  right: 15px;
+  border: 2px solid #333;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#faq ul li i:before, ul li i:after {
+  content: "";
+  position: absolute;
+  background-color: #333;
+  width: 3px;
+  height: 9px;
+}
+#faq ul li i:before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+#faq ul li i:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+#faq ul li input[type=checkbox] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  touch-action: manipulation;
+}
+#faq ul li input[type=checkbox]:checked ~ h3 {
+  color: #333;
+}
+#faq ul li input[type=checkbox]:checked ~ p {
+  /*margin-top: 0;*/
+  max-height: 0;
+  transition: .3s;
+  opacity: 0;
+  /*transform: translate(0, 50%);*/
+}
+#faq ul li input[type=checkbox]:checked ~ i:before {
+  transform: translate(2px, 0) rotate(45deg);
+}
+#faq ul li input[type=checkbox]:checked ~ i:after {
+  transform: translate(-2px, 0) rotate(-45deg);
+}
+
+@media screen and (max-width: 566px) {
+  #faq ul li i {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20px;
+    right: 0;
+    transform: none;
+  }
+  #faq h3 {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #faq p {
+    text-align: center;
+    margin: 12px auto;
+    padding: 0;
+    display: block;
+  }
+  #faq ul li::before {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #faq p .btn{
+    display: block;
+    margin-top: 12px;
+  }
+}
+

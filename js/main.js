@@ -225,7 +225,7 @@ function sleep(ms) {
 async function addChars(descriptionHtml, content) {
   for (let i = 0; i < content.length; i++) {
     descriptionHtml.innerHTML += content[i]
-    await sleep(i / 1.5);
+    await sleep(i / 3);
   }
 }
 
